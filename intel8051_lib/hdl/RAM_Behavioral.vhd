@@ -32,7 +32,7 @@ BEGIN
            "00100010", -- 01
            "00000001", -- 02
            "00000011", -- 03
-           "00001110", -- 04
+           "11111111", -- 04 (FF)
            "00001010", -- 05
            "00000100", -- 06
            "00000000", -- 07
@@ -46,6 +46,7 @@ BEGIN
       startup := false;
     elsif rising_edge(clk) then
       byte_number := conv_integer(addr);
+      
       if (write = '1') then
         RAM256(byte_number) <= data;
         data <= (others => 'Z');
@@ -54,6 +55,7 @@ BEGIN
       else
         data <= (others => 'Z');
       end if; 
+      
     end if;
   end process;
   

@@ -10,7 +10,8 @@ ENTITY accumulator IS
     clk : in STD_LOGIC;
     write : in STD_LOGIC;
     read : in STD_LOGIC;
-    data : inout STD_LOGIC_VECTOR(data_bus_width-1 downto 0) := x"ZZ"
+    data : inout STD_LOGIC_VECTOR(data_bus_width-1 downto 0) := x"ZZ";
+    parity_flag: out STD_LOGIC := '0'
   );
 END ENTITY accumulator;
 

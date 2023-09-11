@@ -23,7 +23,9 @@ ENTITY control_unit IS
 	 write_RAR:     out  std_logic;
 	 read_RAM:      out  std_logic;
 	 write_RAM:     out  std_logic;
-	 opcode:        out std_logic_vector(1 downto 0) := "ZZ"
+	 opcode:        out std_logic_vector(1 downto 0) := "ZZ";
+	 write_PSW:     out  std_logic;
+	 read_PSW:      out  std_logic
 );
 END ENTITY control_unit;
 
@@ -61,6 +63,8 @@ BEGIN
 		write_RAR <= '0';
 		read_RAM <= '0';
 		write_RAM <= '0';
+		write_PSW <= '0';
+		read_PSW <= '0';
 		
 		case (current_state) is
 		  

@@ -8,11 +8,12 @@ ENTITY adder IS
       data_bus_width : integer := 8
    );
    PORT( 
-      clk     : IN     std_logic;
-      ACC_REG : IN     std_logic_vector (data_bus_width-1 DOWNTO 0);
-      TSR     : IN     std_logic_vector (data_bus_width-1 DOWNTO 0);
-      opcode  : IN     std_logic_vector (1 DOWNTO 0);
-      res     : OUT    std_logic_vector (data_bus_width-1 DOWNTO 0) := x"ZZ"
+      clk        : in     std_logic;
+      ACC_REG    : in     std_logic_vector (data_bus_width-1 DOWNTO 0);
+      TSR        : in     std_logic_vector (data_bus_width-1 DOWNTO 0);
+      opcode     : in     std_logic_vector (1 DOWNTO 0);
+      res        : out    std_logic_vector (data_bus_width-1 DOWNTO 0) := x"ZZ";
+      carry_flag : out    std_logic := '0'
    );
 
 END adder ;
@@ -30,7 +31,8 @@ BEGIN
                temp1 := "0" & ACC_REG(7 downto 0);
                temp2 := "0" & TSR(7 downto 0);
                sum := temp1 + temp2;
-               res <= sum(data_bus_width-1 downto 0);            
+               res <= sum(data_bus_width-1 downto 0);
+               carry_flag <= sum(8);            
             
             when "ZZ" =>
               res <= x"ZZ";

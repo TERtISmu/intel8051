@@ -59,7 +59,8 @@ ARCHITECTURE Behavioral OF test IS
 		  clk : in STD_LOGIC;
       write : in STD_LOGIC;
       read : in STD_LOGIC;
-      data : inout STD_LOGIC_VECTOR(data_bus_width-1 downto 0)
+      data : inout STD_LOGIC_VECTOR(data_bus_width-1 downto 0);
+      parity_flag : out STD_LOGIC
 	  );
   end component;
   
@@ -84,7 +85,7 @@ ARCHITECTURE Behavioral OF test IS
       clk : in STD_LOGIC;
       write : in STD_LOGIC;
       read : in STD_LOGIC;
-      data_in : in STD_LOGIC_VECTOR(data_bus_width-1 downto 0);
+      data_in : inout STD_LOGIC_VECTOR(data_bus_width-1 downto 0);
       data_out: out STD_LOGIC_VECTOR(data_bus_width-1 downto 0)
      );
   end component;
@@ -119,12 +120,27 @@ ARCHITECTURE Behavioral OF test IS
 	    data_bus_width: integer := 8
     );
     port(
-      clk:      in std_logic;
-	    ACC_REG:  in std_logic_vector(data_bus_width-1 downto 0);
-	    TSR:      in std_logic_vector(data_bus_width-1 downto 0);
-	    opcode:   in std_logic_vector(1 downto 0);
-	    res:      out std_logic_vector(data_bus_width-1 downto 0)
+      clk:        in std_logic;
+	    ACC_REG:    in std_logic_vector(data_bus_width-1 downto 0);
+	    TSR:        in std_logic_vector(data_bus_width-1 downto 0);
+	    opcode:     in std_logic_vector(1 downto 0);
+	    res:        out std_logic_vector(data_bus_width-1 downto 0);
+	    carry_flag: out std_logic
 	  );
+  end component;
+  
+  component program_status_word_register is
+    generic(
+		  data_bus_width: integer := 8
+	  );
+    Port(
+      clk : in STD_LOGIC;
+      write : in STD_LOGIC;
+      read : in STD_LOGIC;
+      carry_flag : in STD_LOGIC;
+      parity_flag : in STD_LOGIC;
+      psw : inout STD_LOGIC_VECTOR(data_bus_width downto 0)
+    );
   end component;
   
   component control_unit is
@@ -147,6 +163,8 @@ ARCHITECTURE Behavioral OF test IS
 		  write_RAR:     out  std_logic;
 		  read_RAM:      out  std_logic;
 		  write_RAM:     out  std_logic;
+		  write_PSW:     out  std_logic;
+		  read_PSW:      out  std_logic;
 		  opcode:        out std_logic_vector(1 downto 0)
 	  );
   end component;
@@ -161,8 +179,10 @@ ARCHITECTURE Behavioral OF test IS
   for RAR: RAM_address_register use entity intel8051_lib.RAM_address_register;
   for RAM1: RAM use entity intel8051_lib.RAM;
   for ALU: adder use entity intel8051_lib.adder;
+  for PSW: program_status_word_register use entity intel8051_lib.program_status_word_register;
   
-  signal clk, enable_RPC, write_MAR, read_MAR, read_ROM, write_ACC, read_ACC, write_ACC_REG, read_ACC_REG, write_TSR, read_TSR, write_RAR, read_RAM, write_RAM : std_logic := '0';
+  signal clk, enable_RPC, write_MAR, read_MAR, read_ROM, write_ACC, read_ACC, write_ACC_REG, read_ACC_REG, write_TSR, read_TSR,
+         write_RAR, read_RAM, write_RAM, carry_flag, parity_flag, write_PSW, read_PSW : std_logic := '0';
   signal program_counter_bus, address_bus, data_bus, ACC_REG_BUS, TSR_BUS, RAR_BUS: std_logic_vector(address_bus_width-1 downto 0) := (others => '0');
   signal opcode_bus: std_logic_vector(1 downto 0) := (others => '0');
   
@@ -188,7 +208,9 @@ BEGIN
 		write_RAR => write_RAR,
 		read_RAM => read_RAM,
 		write_RAM => write_RAM,
-		opcode => opcode_bus
+		opcode => opcode_bus,
+		write_PSW => write_PSW,
+		read_PSW => read_PSW
 	);
   
   RPC: program_counter_register
@@ -233,7 +255,8 @@ BEGIN
     clk => clk,
     write => write_ACC,
     read => read_ACC,
-    data => data_bus
+    data => data_bus,
+    parity_flag => parity_flag
   );
   
   ACC_REG: accumulator_register
@@ -292,7 +315,21 @@ BEGIN
 	  ACC_REG => ACC_REG_BUS,
 	  TSR => TSR_BUS,
 	  opcode => opcode_bus,
-	  res => data_bus
+	  res => data_bus,
+	  carry_flag => carry_flag
+  );
+  
+  PSW: program_status_word_register
+  generic map(
+	  data_bus_width => data_bus_width
+	)
+  port map(
+    clk => clk,
+    write => write_PSW,
+    read  => read_PSW,
+    carry_flag => carry_flag,
+    parity_flag => parity_flag,
+    psw => data_bus
   );
 	
 END ARCHITECTURE Behavioral;
