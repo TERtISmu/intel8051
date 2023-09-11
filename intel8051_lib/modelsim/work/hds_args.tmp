@@ -1,0 +1,1 @@
+ -L intel8051_lib -l ../transcript.txt -i -t ns -multisource_delay latest +typdelays intel8051_lib.test(Behavioral)

@@ -1,0 +1,21 @@
+--
+-- VHDL Architecture intel8051_lib.adder.Behavioral
+--
+-- Created:
+--          by - user.UNKNOWN (WIN-ELLKH8V1UPP)
+--          at - 17:12:42 11.09.2023
+--
+-- using Mentor Graphics HDL Designer(TM) 2021.1 Built on 14 Jan 2021 at 15:11:42
+--
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+
+ENTITY adder IS
+END ENTITY adder;
+
+--
+ARCHITECTURE Behavioral OF adder IS
+BEGIN
+END ARCHITECTURE Behavioral;
+

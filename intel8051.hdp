@@ -1,0 +1,17 @@
+[ModelSim]
+intel8051_lib = $HDS_PROJECT_DIR\intel8051_lib\modelsim
+[hdl]
+intel8051_lib = $HDS_PROJECT_DIR\intel8051_lib\hdl
+[hdl_vm]
+intel8051_lib = $HDS_HOME/examples/hds_scratch/hds_repository/hdl_vm
+[hdl_ws]
+intel8051_lib = $HDS_PROJECT_DIR
+[hds]
+intel8051_lib = $HDS_PROJECT_DIR\intel8051_lib\hds
+[hds_settings]
+default_library = intel8051_lib
+version = 3
+[library_type]
+intel8051_lib = regular
+[shared]
+others = $HDS_TEAM_HOME/shared.hdp

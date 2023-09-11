@@ -1,0 +1,2 @@
+DEFAULT_ARCHITECTURE atom Behavioral
+DEFAULT_FILE atom temporary_storage_register_Behavioral.vhd
