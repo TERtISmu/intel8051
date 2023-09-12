@@ -22,8 +22,6 @@ ARCHITECTURE Behavioral OF program_status_word_register IS
   
 BEGIN
   
-  
-  
   process(clk)
     begin
         if rising_edge(clk) then
@@ -42,6 +40,7 @@ BEGIN
           else
             psw <= (others => 'Z');
           end if;
+          
         end if;
   end process;
   

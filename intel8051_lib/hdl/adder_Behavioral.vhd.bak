@@ -28,12 +28,23 @@ BEGIN
         
          case (opcode) is 
             when "00" => -- ADD
-               temp1 := "0" & ACC_REG(7 downto 0);
-               temp2 := "0" & TSR(7 downto 0);
-               sum := temp1 + temp2;
-               res <= sum(data_bus_width-1 downto 0);
-               --carry_flag <= sum(8);            
+              temp1 := "0" & ACC_REG(7 downto 0);
+              temp2 := "0" & TSR(7 downto 0);
+              sum := temp1 + temp2;
+              res <= sum(data_bus_width-1 downto 0);
+              carry_flag <= sum(8);            
             
+            when "01" => -- COMPARE
+              if (TSR = ACC_REG) then
+	         					res <= "10000000";
+				      elsif (TSR < ACC_REG) then
+						    carry_flag <= '1';
+						    res <= "01111111";
+				      else
+						    carry_flag <= '0';
+						    res <= "01111111";
+			       	end if;
+			       	
             when "ZZ" =>
               res <= x"ZZ";
              
