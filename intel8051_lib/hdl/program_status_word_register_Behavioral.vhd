@@ -32,6 +32,12 @@ BEGIN
             reg_psw(7) <= '0';
           end if;
           
+          if parity_flag = '1' then
+            reg_psw(0) <= '1';
+          else
+            reg_psw(0) <= '0';
+          end if;
+          
           if (write = '1') then
             reg_psw <= psw;
             psw <= (others => 'Z');

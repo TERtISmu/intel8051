@@ -20,11 +20,12 @@ END ENTITY ROM;
 ARCHITECTURE Behavioral OF ROM IS
   type MEMORY is array (0 to 255) of std_logic_vector(address_bus_width-1 downto 0);
   constant ROM: MEMORY := (
-	  "00101100",                          -- ADD A, R4 (1 + E = F)
+	  "00101100",                          -- ADD A, R4 
 	  "10000101", "00001010", "00001011",  -- MOV 0x0A, 0x0B (6F <- DE)      
 	  "10110110", "00000101", "00001010",  -- CJNE @R0, 0x05, start (0x05 == 0x05)
     "10000101", "00001110", "00001111",  -- MOV 0x0E, 0x0F (25 <- CD)
     "10110111", "00000101", "00001010",  -- CJNE @R1, 0x05, start (0x77 != 0x05)
+    "00101100",                          -- ADD A, R5
 	  others => "00000000"
   );
   
