@@ -1,5 +1,5 @@
 # vsim -f hds_args.tmp -no_autoacc -foreign "hdsInit C:/MentorGraphics/HDS_2021.1/resources/downstream/modelsim/ModelSim_64Bit.dll" -pli ""C:/MentorGraphics/HDS_2021.1/resources/downstream/modelsim/ModelSim_64Bit.dll"" 
-# Start time: 05:32:41 on Sep 12,2023
+# Start time: 05:51:28 on Sep 12,2023
 # ** Note: (vsim-8009) Loading existing optimized design _opt1
 # Loading std.standard
 # Loading std.textio(body)
@@ -20,22 +20,289 @@
 # Loading work.ram(behavioral)#1
 # Loading work.adder(behavioral)#1
 # Loading work.program_status_word_register(behavioral)#1
+# Loading work.mcu_tester(behavioral)#1
 # Loading C:/MentorGraphics/HDS_2021.1/resources/downstream/modelsim/ModelSim_64Bit.dll
 add wave -r /*
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: user  Hostname: WIN-ELLKH8V1UPP  ProcessID: 15208
-#           Attempting to use alternate WLF file "./wlfti85ei3".
+#           Attempting to use alternate WLF file "./wlfttg9hi3".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfti85ei3
-force -freeze sim:/test/clk 0 0, 1 {50 ns} -r 100
+#           Using alternate file: ./wlfttg9hi3
 run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 50 ns  Iteration: 0  Instance: /test/ROM1
+#    Time: 25 ns  Iteration: 1  Instance: /test/ROM1
 # ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 50 ns  Iteration: 0  Instance: /test/ROM1
+#    Time: 25 ns  Iteration: 1  Instance: /test/ROM1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 50 ns  Iteration: 0  Instance: /test/RAM1
+#    Time: 25 ns  Iteration: 1  Instance: /test/RAM1
 # ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 50 ns  Iteration: 0  Instance: /test/RAM1
+#    Time: 25 ns  Iteration: 1  Instance: /test/RAM1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 75 ns  Iteration: 1  Instance: /test/RAM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 75 ns  Iteration: 1  Instance: /test/RAM1
 # 0
 # 
+run
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 225 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 225 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 225 ns  Iteration: 1  Instance: /test/RAM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 225 ns  Iteration: 1  Instance: /test/RAM1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 275 ns  Iteration: 1  Instance: /test/RAM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 275 ns  Iteration: 1  Instance: /test/RAM1
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 325 ns  Iteration: 1  Instance: /test/RAM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 325 ns  Iteration: 1  Instance: /test/RAM1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 375 ns  Iteration: 1  Instance: /test/RAM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 375 ns  Iteration: 1  Instance: /test/RAM1
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 425 ns  Iteration: 1  Instance: /test/RAM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 425 ns  Iteration: 1  Instance: /test/RAM1
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 975 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 975 ns  Iteration: 1  Instance: /test/ROM1
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1225 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1225 ns  Iteration: 1  Instance: /test/ROM1
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1525 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 1525 ns  Iteration: 1  Instance: /test/ROM1
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2175 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2175 ns  Iteration: 1  Instance: /test/ROM1
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 2825 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 2825 ns  Iteration: 1  Instance: /test/ROM1
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3275 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 3275 ns  Iteration: 1  Instance: /test/ROM1
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3525 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 3525 ns  Iteration: 1  Instance: /test/ROM1
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3825 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 3825 ns  Iteration: 1  Instance: /test/ROM1
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4475 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 4475 ns  Iteration: 1  Instance: /test/ROM1
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5125 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 5125 ns  Iteration: 1  Instance: /test/ROM1
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5475 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 5475 ns  Iteration: 1  Instance: /test/ROM1
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5725 ns  Iteration: 1  Instance: /test/ROM1
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 5725 ns  Iteration: 1  Instance: /test/ROM1
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# End time: 05:54:20 on Sep 12,2023, Elapsed time: 0:02:52
+# Errors: 0, Warnings: 44

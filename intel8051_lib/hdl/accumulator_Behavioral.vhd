@@ -19,7 +19,6 @@ END ENTITY accumulator;
 ARCHITECTURE Behavioral OF accumulator IS
   signal ACC_data : STD_LOGIC_VECTOR(data_bus_width-1 downto 0) := x"01";
   
-  
 BEGIN
   
   process(clk)

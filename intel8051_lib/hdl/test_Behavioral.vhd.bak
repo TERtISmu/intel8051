@@ -146,6 +146,15 @@ ARCHITECTURE Behavioral OF test IS
     );
   end component;
   
+  component mcu_tester IS
+    generic(
+      per: time := 50 ns
+     );
+    port (
+      clk: out std_logic
+    );
+  end component mcu_tester;
+  
   component control_unit is
     generic(
 		  address_bus_width: integer := 8
@@ -153,6 +162,7 @@ ARCHITECTURE Behavioral OF test IS
 	  port(
 		  clk:           in  std_logic;
 		  enable_RPC:    out  std_logic;
+		  jump_RPC:      out  std_logic;
 		  read_MAR:      out  std_logic;
 		  write_MAR:     out  std_logic;
 		  read_ROM:      out  std_logic;
@@ -183,6 +193,7 @@ ARCHITECTURE Behavioral OF test IS
   for RAM1: RAM use entity intel8051_lib.RAM;
   for ALU: adder use entity intel8051_lib.adder;
   for PSW: program_status_word_register use entity intel8051_lib.program_status_word_register;
+  for TEST: mcu_tester use entity intel8051_lib.mcu_tester;
   
   signal clk, enable_RPC, jump_RPC, write_MAR, read_MAR, read_ROM, write_ACC, read_ACC, write_ACC_REG, read_ACC_REG, write_TSR, read_TSR,
          write_RAR, read_RAM, write_RAM, carry_flag, parity_flag, write_PSW, read_PSW : std_logic := '0';
@@ -336,6 +347,14 @@ BEGIN
     carry_flag => carry_flag,
     parity_flag => parity_flag,
     psw => data_bus
+  );
+  
+  TEST: mcu_tester
+  --generic map(
+  --  per => per
+  --)
+  port map(
+    clk => clk
   );
 	
 END ARCHITECTURE Behavioral;

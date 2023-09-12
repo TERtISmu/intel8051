@@ -42,7 +42,7 @@ BEGIN
         CountOnes := 0;
         for i in ACC_data'range loop
             if ACC_data(i) = '1' then
-                CountOnes <= CountOnes + 1;
+                CountOnes := CountOnes + 1;
             end if;
         end loop;
         
